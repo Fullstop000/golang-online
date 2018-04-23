@@ -84,8 +84,13 @@ func NewTmpFile(data []byte) (*TmpFile, error) {
 	if _ ,err := os.Stat(absTmpDir) ; os.IsNotExist(err) {
 		if err = os.Mkdir(absTmpDir, 0777) ; err != nil {
 			logger.Errorf("Error creating tmp dir '%s' : %s", absTmpDir, err)
+			return nil, err
 		}
+	} else {
+		logger.Errorf("Path error : %s ", err)
+		return nil, err
 	}
+
 	file = path.Join(absTmpDir,file)
 	return &TmpFile{ Path: absTmpDir, GoFile: file + ".go", Binary: file, Data: data}, nil
 }
