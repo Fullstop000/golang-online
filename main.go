@@ -1,9 +1,7 @@
 package main
 
 import (
-	"fmt"
 	"os/exec"
-	"log"
 	"path/filepath"
 	"path"
 	"io/ioutil"
@@ -29,14 +27,6 @@ func init() {
 	logging.SetFormatter(logging.MustStringFormatter(
 		`%{color}%{time:15:04:05.000} %{shortfunc} ▶ %{level:.4s} %{id:03x}%{color:reset} %{message}`))
 	logger = logging.MustGetLogger("execute-go")
-}
-func main () {
-	test := exec.Command("go", "build","-o","test" ,"-v")
-	output, err := test.CombinedOutput() 
-	if err != nil {
-		log.Fatal(err)	
-	}
-	fmt.Println(string(output))
 }
 
 func(t *TmpFile) GoBuild() error {
