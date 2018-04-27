@@ -7,3 +7,9 @@
 *.ntvs*
 *.njsproj
 *.sln
+
+/f/node_modules
+/f/dist/
+/f/npm-debug.log*
+/f/yarn-debug.log*
+/f/yarn-error.log*

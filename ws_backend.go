@@ -28,7 +28,7 @@ func (wb *WebsocketBackend) Close() {
 	//close(wb.recv)
 	//close(wb.errCh)
 	wb.writingMux.Lock()
-	err := wb.connection.WriteMessage(websocket.CloseMessage, []byte(" Finish "))
+	err := wb.connection.WriteMessage(websocket.CloseMessage, []byte("  Finish "))
 	wb.writingMux.Unlock()
 	if err != nil {
 		logger.Errorf("Error writing close message to the websocket : %s", err)
@@ -64,7 +64,7 @@ func (wb *WebsocketBackend) Write() {
 	for {
 		select {
 		case msg := <-wb.recv:
-			logger.Debugf("Receiving the log message : %s", msg)
+			//logger.Debugf("Receiving the log message : %s", msg)
 			if msg.Record.Level == logging.WARNING && msg.Record.Args[0] == "close" {
 				wb.Close()
 			} else {

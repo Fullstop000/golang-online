@@ -1,0 +1,11 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'normalize.css';
+import 'codemirror/mode/go/go'
+import '../node_modules/codemirror/lib/codemirror.css'
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();

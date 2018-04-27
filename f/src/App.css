@@ -1,0 +1,48 @@
+.App {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.code {
+  height: 50%;
+  width: 80%;
+  border: 1px solid silver;
+}
+.log {
+  height: 30%;
+  width: 80%;
+  border: 1px solid black;
+  background: black;
+  color: white;
+  padding: 12px;
+}
+.log-item {
+  margin: 10px 0;
+}
+.CodeMirror {
+  height: 100%;
+}
+.toolbar {
+  width: 80%;
+  display: flex;
+  margin: 20px 0 ;
+  height: 48px;
+}
+.toolbar div {
+  margin: 0 20px;
+  border-radius: 4px;
+  background: #E91E63;
+  color: #FAFAFA;
+  height: 100%;
+  line-height: 48px;
+  padding: 0 20px;
+  cursor: pointer;
+  transition: background 0.2s ease
+}
+.toolbar div:hover {
+  background: #D81B60;
+  transition: background 0.2s ease
+}
